@@ -12,4 +12,17 @@
   "observability": {
     "enabled": true,
   },
+  "env": {
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    },
+    "preview": {
+      "workers_dev": true,
+      "vars": {
+        "ENVIRONMENT": "preview"
+      }
+    }
+  }
 }

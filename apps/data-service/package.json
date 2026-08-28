@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "deploy": "wrangler deploy",
+    "deploy:preview": "wrangler deploy --env preview",
+    "deploy:production": "wrangler deploy --env production",
+    "deploy": "pnpm run deploy:preview && pnpm run deploy:production",
     "dev": "wrangler dev --x-remote-bindings",
     "start": "wrangler dev",
     "test": "vitest",
