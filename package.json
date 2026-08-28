@@ -6,9 +6,12 @@
     "setup": "pnpm i && pnpm run build:data-ops",
     "build:data-ops": "pnpm run --filter data-ops build",
     "dev:user-application": "pnpm run --filter user-application dev",
-    "deploy:user-application": "pnpm run build:data-ops && pnpm run --filter user-application deploy",
     "dev:data-service": "pnpm run --filter data-service dev",
-    "deploy:data-service": "pnpm run build:data-ops && pnpm run --filter data-service deploy"
+    "deploy:user-application": "pnpm run build:data-ops && pnpm run --filter user-application deploy",
+    "deploy:data-service": "pnpm run build:data-ops && pnpm run --filter data-service deploy",
+    "deploy:preview": "pnpm run build:data-ops && pnpm run --filter user-application deploy:preview && pnpm run --filter data-service deploy:preview",
+    "deploy:production": "pnpm run build:data-ops && pnpm run --filter user-application deploy:production && pnpm run --filter data-service deploy:production",
+    "deploy": "pnpm run deploy:preview && pnpm run deploy:production"
   },
   "keywords": [],
   "author": "",
