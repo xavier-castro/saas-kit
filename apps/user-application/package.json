@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "vite dev --port 3000",
     "build": "vite build",
-    "deploy:preview": "CLOUDFLARE_ENV=preview pnpm run build && wrangler deploy",
-    "deploy:production": "CLOUDFLARE_ENV=production pnpm run build && wrangler deploy",
+    "deploy:preview": "CLOUDFLARE_ENV=preview pnpm run build && wrangler deploy --env preview",
+    "deploy:production": "CLOUDFLARE_ENV=production pnpm run build && wrangler deploy --env production",
     "deploy": "pnpm run deploy:preview && pnpm run deploy:production",
     "serve": "vite preview",
     "cf-typegen": "wrangler types --env-interface Env"
